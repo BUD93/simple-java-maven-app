@@ -20,6 +20,7 @@ pipeline {
         stage('Deliver') { 
             steps {
                 bat 'mvn jar:jar install:install help:evaluate -Dexpression=project.name'
+                bat 'java -jar target/test.jar'
             }
         }
     }
