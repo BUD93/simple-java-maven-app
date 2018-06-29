@@ -23,10 +23,7 @@ pipeline {
                 echo 'into the local Maven repository, which will ultimately be stored in'
                 echo 'Jenkins''s local Maven repository (and the "maven-repository" Docker data'
                 echo 'volume).'
-                set -x
                 sh "mvn jar:jar install:install help:evaluate -Dexpression=project.name"
-                set +x
-
             }
         }
     }
