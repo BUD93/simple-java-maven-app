@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Deliver') { 
             steps { 
-              call '"%JBOSS_HOME%/jboss-cli.bat" --connect=127.0.0.1:9990 --user=admin --password=abcd@1234'  
+              call "%JBOSS_HOME%/jboss-cli.bat  --connect=127.0.0.1:9990 --user=admin --password=abcd@1234"
 
             }
         }
