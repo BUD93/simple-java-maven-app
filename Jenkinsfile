@@ -5,7 +5,7 @@ pipeline {
 
         stage('Deliver') { 
             steps { 
-              sh "%JBOSS_HOME%/jboss-cli.sh"
+              sh '%JBOSS_HOME%/jboss-cli.sh'
 
             }
         }
