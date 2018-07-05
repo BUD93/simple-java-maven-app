@@ -20,7 +20,7 @@ pipeline {
         stage('Deliver') { 
             steps { 
               bat ' cd %JBOSS_HOME%'
-               // bat '"%JBOSS_HOME%/jboss-cli.bat" --connect=127.0.0.1:9990 --user=admin --password=abcd@1234 --command="deploy target/my-app-1.0-SNAPSHOT.jar"'  
+              bat 'jboss-cli.bat" --connect=127.0.0.1:9990 --user=admin --password=abcd@1234 --command="deploy target/my-app-1.0-SNAPSHOT.jar"'  
 
             }
         }
