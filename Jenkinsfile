@@ -19,8 +19,11 @@ pipeline {
         }
         stage('Deliver') { 
             steps {
+                def path_jboss = "C:\Program Files\jboss\bin"
                 bat 'mvn jar:jar install:install help:evaluate -Dexpression=project.name'
                 bat 'java -jar target/my-app-1.0-SNAPSHOT.jar'
+                bat '${path_jboss}/jboss-cli.sh -c controller=127.0.0.1:9990 --user=admin --password=abcd@1234 --command="deploy target/my-app-1.0-SNAPSHOT.jar"'  
+
             }
         }
     }
